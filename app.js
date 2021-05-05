@@ -13,10 +13,13 @@ con.on('open', () => {
 
 app.use(express.json())
 
-const alienRouter = require('./routes/aliens')
+
 const accountRouter = require('./routes/accounts')
-app.use('/aliens',alienRouter);
+const employeeRouter = require('./routes/employees')
+
+
 app.use('/accounts',accountRouter);
+app.use('/employees',employeeRouter);
 app.listen(9000, () => {
     console.log('Server started')
 })
